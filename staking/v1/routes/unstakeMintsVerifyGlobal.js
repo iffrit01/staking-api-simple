@@ -51,7 +51,8 @@ const unstakeMintsVerifyGlobal = async (req, res) => {
             // different version of DB on local
             data[0].mints = data[0].mints;
         } else {
-            data[0].mints = JSON.parse(data[0].mints);
+	    data[0].mints = data[0].mints;// update 2024-08-05
+            //data[0].mints = JSON.parse(data[0].mints);
         }
 
         console.log('DB Data wallet', data[0].wallet, 'mints', data[0].mints, 'transaction', data[0].transaction);

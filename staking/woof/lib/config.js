@@ -53,7 +53,7 @@ module.exports.priceForYabanjies = priceForYabanjies;
 const priceForYabanjiesOpeningAccount = 0.02;
 module.exports.priceForYabanjiesOpeningAccount = priceForYabanjiesOpeningAccount;
 
-const priceForYabanjiesClaimingFee = 0.01;
+const priceForYabanjiesClaimingFee = 0.0035;//0.01;
 module.exports.priceForYabanjiesClaimingFee = priceForYabanjiesClaimingFee;
 
 const priceForKnowners = 0.000000001;
