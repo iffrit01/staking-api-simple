@@ -1,0 +1,38 @@
+{
+  "name": "staking-server",
+  "version": "1.0.0",
+  "main": "staking-server.js",
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.18.1",
+    "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
+    "@metaplex/js": "^4.12.0",
+    "@nfteyez/sol-rayz": "^0.10.2",
+    "@project-serum/sol-wallet-adapter": "^0.2.6",
+    "@solana/spl-token": "^0.3.1",
+    "@solana/web3.js": "^1.35.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.18.3",
+    "bs58": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.16.4",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^6.3.0",
+    "jsonwebtoken": "^9.0.0",
+    "luxon": "^2.3.2",
+    "mariadb": "^3.0.2",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.7",
+    "promptly": "^3.2.0",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-util": "^0.15.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node staking-server.js",
+    "start:dev": "nodemon --polling-interval 4000",
+    "start:prod": "pm2 start staking-server.js"
+  }
+}

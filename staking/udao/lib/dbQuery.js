@@ -1,0 +1,39 @@
+// require('dotenv').config();
+let path = __dirname+'/../../../.env'
+
+require('dotenv').config({path: path});
+
+const fs = require('fs');
+const mariadb = require('mariadb/callback');
+
+const config = require('./config');
+
+const pool = mariadb.createPool({
+    connectionLimit : 5, //important
+    host     : process.env.MARIADB_HOST,
+    user     : process.env.MARIADB_USER,
+    password : process.env.MARIADB_PASS,
+    // port     : process.env.DB_PORT,
+    database : process.env[config.PREFIX + 'STAKING_DB'],
+    timezone : 'Z',
+    dateStrings : true,
+    // debug    :  false,
+    // ssl      : {
+    //     ca : fs.readFileSync(process.env.DB_CERT_PATH)
+    // }
+});
+
+// one db method
+
+const dbQuery = (query, params) => {
+    return new Promise((resolve, reject)=>{
+        pool.query(query, params,  (error, elements)=>{
+            if(error){
+                return reject(error);
+            }
+            return resolve(elements);
+        });
+    });
+};
+
+module.exports = dbQuery;
